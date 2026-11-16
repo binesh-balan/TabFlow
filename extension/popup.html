@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TabFlow</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>TabFlow</h1>
+    <span id="status" class="status">Stopped</span>
+  </header>
+
+  <section>
+    <label for="interval">Switch tab every</label>
+    <div class="row">
+      <input id="interval" type="number" min="1" max="86400" step="1" value="10">
+      <span>seconds</span>
+    </div>
+    <div class="presets">
+      <button type="button" data-sec="5">5s</button>
+      <button type="button" data-sec="15">15s</button>
+      <button type="button" data-sec="30">30s</button>
+      <button type="button" data-sec="60">1m</button>
+      <button type="button" data-sec="300">5m</button>
+    </div>
+  </section>
+
+  <section>
+    <label for="order">Order</label>
+    <select id="order">
+      <option value="strip">Tab bar order (left to right)</option>
+      <option value="reverse">Tab bar order, reversed</option>
+      <option value="shuffle">Shuffle</option>
+      <option value="playlist">My playlist (below)</option>
+    </select>
+    <label class="check"><input id="fullscreen" type="checkbox"> Full screen while rotating</label>
+  </section>
+
+  <div class="row actions">
+    <button id="toggle" type="button" class="primary">Start</button>
+    <button id="next" type="button" disabled>Next tab</button>
+  </div>
+
+  <section id="playlist-section">
+    <div class="row between">
+      <strong>Playlist</strong>
+      <span class="row">
+        <button id="add" type="button" class="small">+ Add this tab</button>
+        <button id="clear" type="button" class="small link">Clear</button>
+      </span>
+    </div>
+    <p class="hint">Open the popup on each tab you want and press "Add this tab". Drag to sort. Leave the time empty to use the default.</p>
+    <ol id="list"></ol>
+    <p id="empty" class="hint empty">No tabs added yet.</p>
+  </section>
+
+  <p class="hint footer">Shortcut Alt+Shift+R starts or stops rotation. Use it to leave full screen, where the toolbar is hidden.</p>
+  <script src="popup.js"></script>
+</body>
+</html>

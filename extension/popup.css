@@ -1,0 +1,35 @@
+:root { color-scheme: light dark; --accent: #1a7f37; --danger: #cf222e; --muted: #6e7781; --line: #8c959f66; }
+body { font: 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; width: 320px; margin: 12px; }
+header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+h1 { font-size: 15px; margin: 0; }
+section { margin-bottom: 12px; }
+label { display: block; margin-bottom: 4px; }
+label.check { display: flex; align-items: center; gap: 6px; margin-top: 8px; }
+.row { display: flex; align-items: center; gap: 6px; }
+.between { justify-content: space-between; }
+input[type=number] { width: 72px; padding: 4px 6px; font: inherit; }
+select { width: 100%; padding: 4px; font: inherit; }
+.presets { display: flex; gap: 4px; margin-top: 6px; flex-wrap: wrap; }
+button { font: inherit; padding: 6px 10px; border-radius: 6px; border: 1px solid #8c959f; background: transparent; color: inherit; cursor: pointer; }
+button:disabled { opacity: .5; cursor: default; }
+.presets button, button.small { padding: 2px 8px; }
+button.link { border: none; color: var(--muted); text-decoration: underline; }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; flex: 1; }
+button.primary.running { background: var(--danger); border-color: var(--danger); }
+.actions { margin-bottom: 14px; }
+.actions button:not(.primary) { flex: 1; }
+.status { font-size: 12px; color: var(--muted); text-align: right; }
+.status.on { color: var(--accent); font-weight: 600; }
+.hint { margin: 4px 0; color: var(--muted); font-size: 11px; }
+.footer { border-top: 1px solid var(--line); padding-top: 8px; }
+ol { list-style: none; margin: 6px 0 0; padding: 0; max-height: 220px; overflow-y: auto; }
+li { display: flex; align-items: center; gap: 4px; padding: 4px; border: 1px solid var(--line); border-radius: 6px; margin-bottom: 4px; background: Canvas; }
+li.current { border-color: var(--accent); }
+li.dragging { opacity: .4; }
+li.over { border-top: 2px solid var(--accent); }
+.handle { cursor: grab; color: var(--muted); user-select: none; padding: 0 2px; }
+.num { color: var(--muted); width: 16px; text-align: right; font-variant-numeric: tabular-nums; }
+.title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+li input[type=number] { width: 52px; padding: 2px 4px; }
+li button { padding: 0 6px; line-height: 20px; }
+.empty[hidden] { display: none; }
